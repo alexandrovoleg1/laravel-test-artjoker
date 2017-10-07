@@ -83,7 +83,7 @@
                     @if(  count($students) > 0 )
                     @foreach($students as $student)
                     <tr>
-                        <td><input type="checkbox" name="studentId" value="{{$student['id']}}"></td>
+                        <td><input type="checkbox" name="studentsId[]" value="{{$student['id']}}"></td>
                         <td style=' text-align: left;'>{{$student['firstname']}}</td>
                         <td style=' text-align: left;'>{{$student['surname']}}</td>
                         <td style=' text-align: left;'>{{$student['email']}}</td>

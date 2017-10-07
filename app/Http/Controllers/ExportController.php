@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExportRequest;
 use App\Models\Students;
+use App\Services\Contract\IDownloader;
 
 class ExportController extends Controller
 {
@@ -28,9 +30,9 @@ class ExportController extends Controller
     /**
      * Exports all student data to a CSV file
      */
-    public function exportStudentsToCSV()
+    public function exportStudentsToCSV(ExportRequest $request, IDownloader $downloader)
     {
-
+        $data = $request->only('studentsId');
     }
 
     /**

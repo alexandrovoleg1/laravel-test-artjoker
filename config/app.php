@@ -178,6 +178,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Other Service Provides...
+         */
+
+        App\Providers\ExportServiceProvider::class,
+
     ],
 
     /*
