@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Students;
 use Illuminate\Database\Seeder;
 
 class StudentsTableSeeder extends Seeder

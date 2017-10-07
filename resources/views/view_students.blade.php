@@ -60,14 +60,14 @@
     <body>
         
         <div class="header">
-            <div><img src="/images/logo_sm.jpg" alt="Logo" title="logo"></div>
+            <div><img src="/public/images/logo_sm.jpg" alt="Logo" title="logo"></div>
             <div  style='margin: 10px;  text-align: left'>
-                <input type="button" value="Select All"/>
-                <input type="button" value="Export"/>
+                <input type="button" value="Select All" onclick="selectAll()" />
+                <input type="button" value="Export" onclick="usersTable.submit()" />
             </div>
         </div>
 
-        <form>
+        <form name="usersTable" action="export" method="get">
 
             <div style='margin: 10px; text-align: center;'>
                 <table class="student-table">
@@ -103,5 +103,19 @@
         
         
     </body>
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script>
+        function selectAll() {
+            $(document).ready(function () {
+                $('input:checkbox').each(function () {
+                    this.checked = true;
+                })
+            })
+        }
+    </script>
 
 </html>

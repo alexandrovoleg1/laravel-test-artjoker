@@ -18,7 +18,7 @@ class Students extends Model
 
     public function course()
     {
-        return $this->belongsTo('Course');
+        return $this->belongsTo(Course::class);
     }
 
     public function address()
