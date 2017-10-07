@@ -13,6 +13,10 @@ class Students extends Model
      */
     protected $table = 'student';
 
+    protected $fillable = [
+      'firstname', 'surname', 'email', 'nationality', 'address_id', 'course_id'
+    ];
+
     public $timestamps = false;
 
 
@@ -24,7 +28,7 @@ class Students extends Model
     public function address()
     {
 
-        return $this->hasOne('StudentAddresses', 'id');
+        return $this->hasOne(StudentAddresses::class, 'id');
 
     }
 }

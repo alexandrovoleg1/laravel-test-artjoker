@@ -13,6 +13,10 @@ class Course extends Model
      */
     protected $table = 'course';
 
+    protected $fillable = [
+      'course_name', 'university'
+    ];
+
     public $timestamps = false;
 
     public function students()

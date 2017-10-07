@@ -33,6 +33,7 @@ class ExportController extends Controller
     public function exportStudentsToCSV(ExportRequest $request, IDownloader $downloader)
     {
         $data = $request->only('studentsId');
+        $downloader->download($data['studentsId']);
     }
 
     /**
