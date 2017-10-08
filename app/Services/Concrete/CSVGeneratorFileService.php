@@ -3,7 +3,6 @@
 namespace App\Services\Concrete;
 
 use App\Models\Students;
-use App\Models\User;
 use App\Services\Contract\IGeneratorFile;
 
 class CSVGeneratorFileService implements IGeneratorFile

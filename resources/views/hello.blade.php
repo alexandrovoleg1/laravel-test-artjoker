@@ -38,7 +38,7 @@
 <body>
 <div class="instructions">
 
-    <img src="/images/logo.png" alt="Logo" title="logo">
+    <img src="/public/images/Logo.png" alt="Logo" title="logo">
 
     <h1>Welcome to the export challenge.</h1>
 
@@ -58,6 +58,7 @@
     <p>Oh and there may be some 'deliberate' errors in the code... Enjoy.</p>
 
     <p><a href="{{url('view')}}" title="task">Click here to continue to the challenge</a></p>
+    <p><a href="{{url('viewCourses')}}" title="task">Click here to continue to the course view</a></p>
 
 </div>
 </body>
