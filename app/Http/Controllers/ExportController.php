@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ExportRequest;
 use App\Models\Students;
-use App\Services\Contract\IDownloader;
+use App\Services\Contract\IGeneratorFile;
 
 class ExportController extends Controller
 {
@@ -30,10 +30,11 @@ class ExportController extends Controller
     /**
      * Exports all student data to a CSV file
      */
-    public function exportStudentsToCSV(ExportRequest $request, IDownloader $downloader)
+    public function exportStudentsToCSV(ExportRequest $request, IGeneratorFile $downloader)
     {
         $data = $request->only('studentsId');
-        $downloader->download($data['studentsId']);
+        $csvGenerator = $downloader->generateCSV($data['studentsId']);
+        $csvGenerator->download();
     }
 
     /**

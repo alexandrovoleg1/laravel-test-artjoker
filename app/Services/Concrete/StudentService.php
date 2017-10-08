@@ -1,34 +1,20 @@
 <?php
 
 namespace App\Services\Concrete;
-use App\Entities\Student;
-use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Collection;
 
 class StudentService
 {
-    /**
-     * @param array $ids
-     * @return Collection
-     */
     public function getByIds(array $ids): Collection {
-        $studentModels = \App\Models\Students::query()
+        return $studentModels = \App\Models\Students::query()
             ->select([
-                'firstname', 'surname', 'email', 'nationality'
+                'id', 'firstname', 'surname', 'email', 'nationality', 'course_id', 'address_id'
             ])
             ->with([
                 'course',
                 'address'
             ])
+            ->whereIn('id', $ids)
             ->get();
-        return $studentModels->map(function ($student) {
-            return new Student(
-                $student->id,
-                $student->firstname,
-                $student->surname,
-                $student->nationality,
-                $student->address()->line_1,
-                $student->course()->course_name
-            );
-        });
     }
 }

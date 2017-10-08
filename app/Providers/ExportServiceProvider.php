@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Services\Concrete\CSVDownloaderService;
+use App\Services\Concrete\CSVGeneratorFileService;
 use App\Services\Concrete\StudentService;
-use App\Services\Contract\IDownloader;
+use App\Services\Contract\IGeneratorFile;
 use Illuminate\Support\ServiceProvider;
 
 class ExportServiceProvider extends ServiceProvider
@@ -26,6 +26,6 @@ class ExportServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->instance(IDownloader::class, new CSVDownloaderService(new StudentService()));
+        $this->app->instance(IGeneratorFile::class, new CSVGeneratorFileService(new StudentService()));
     }
 }
