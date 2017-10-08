@@ -2,7 +2,7 @@
 
 namespace App\Services\Contract;
 
-interface IGeneratorFile
+interface IGeneratorCSVFile
 {
     public function generateCSV(array $data);
 }

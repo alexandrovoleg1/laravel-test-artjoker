@@ -12,7 +12,7 @@
 */
 
 Route::get('', [ 'uses' => 'ExportController@welcome', 'as' => 'home'] );
-Route::get('view', [ 'uses' => 'ExportController@viewStudents', 'as' => 'view'] );
-Route::get('export', [ 'uses' => 'ExportController@exportStudentsToCSV', 'as' => 'export'] );
+Route::get('viewUsers', [ 'uses' => 'ExportController@viewStudents', 'as' => 'viewUsers'] );
+Route::get('exportUsers', [ 'uses' => 'ExportController@exportStudentsToCSV', 'as' => 'exportUsers'] );
 Route::get('viewCourses', [ 'uses' => 'ExportController@viewCourses', 'as' => 'viewCourses'] );
-Route::get('exportCourses', [ 'uses' => 'ExportController@exporttCourseAttendenceToCSV', 'as' => 'exportCourses'] );
+Route::get('exportCourses', [ 'uses' => 'ExportController@exportCourseAttendenceToCSV', 'as' => 'exportCourses'] );

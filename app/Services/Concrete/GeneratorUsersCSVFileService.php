@@ -3,9 +3,9 @@
 namespace App\Services\Concrete;
 
 use App\Models\Students;
-use App\Services\Contract\IGeneratorFile;
+use App\Services\Contract\IGeneratorCSVFile;
 
-class CSVGeneratorFileService implements IGeneratorFile
+class GeneratorUsersCSVFileService implements IGeneratorCSVFile
 {
     /**
      * @var StudentService

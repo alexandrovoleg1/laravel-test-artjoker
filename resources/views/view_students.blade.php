@@ -67,7 +67,7 @@
             </div>
         </div>
 
-        <form name="usersTable" action="export" method="get">
+        <form name="usersTable" action="exportUsers" method="get">
 
             <div style='margin: 10px; text-align: center;'>
                 <table class="student-table">

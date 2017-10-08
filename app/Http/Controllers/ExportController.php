@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ExportCoursesRequest;
-use App\Http\Requests\ExportRequest;
+use App\Http\Requests\ExportUsersRequest;
 use App\Models\Course;
 use App\Models\Students;
-use App\Services\Concrete\CSVGeneratorCoursesFileService;
-use App\Services\Contract\IGeneratorFile;
+use App\Services\Concrete\GeneratorCoursesCSVFileService;
+use App\Services\Contract\IGeneratorCSVFile;
 
 class ExportController extends Controller
 {
@@ -33,10 +33,10 @@ class ExportController extends Controller
     /**
      * Exports all student data to a CSV file
      */
-    public function exportStudentsToCSV(ExportRequest $request, IGeneratorFile $downloader)
+    public function exportStudentsToCSV(ExportUsersRequest $request, IGeneratorCSVFile $generatorCSVFile)
     {
         $data = $request->only('studentsId');
-        $csvGenerator = $downloader->generateCSV($data['studentsId']);
+        $csvGenerator = $generatorCSVFile->generateCSV($data['studentsId']);
         $csvGenerator->download();
     }
 
@@ -49,10 +49,10 @@ class ExportController extends Controller
     /**
      * Exports the total amount of students that are taking each course to a CSV file
      */
-    public function exporttCourseAttendenceToCSV(ExportCoursesRequest $request, CSVGeneratorCoursesFileService $coursesFileService)
+    public function exportCourseAttendenceToCSV(ExportCoursesRequest $request, GeneratorCoursesCSVFileService $coursesFileService)
     {
         $data = $request->only('coursesId');
-        $csvGeneratorCourse = $coursesFileService->generateCSV($data['coursesId']);
-        $csvGeneratorCourse->download();
+        $generatorCSVFile = $coursesFileService->generateCSV($data['coursesId']);
+        $generatorCSVFile->download();
     }
 }
